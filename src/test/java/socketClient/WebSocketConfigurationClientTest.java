@@ -2,6 +2,7 @@ package socketClient;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.reactive.socket.WebSocketMessage;
@@ -14,13 +15,13 @@ import reactor.core.publisher.Mono;
 import java.net.URI;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Ignore
+@Disabled
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class WebSocketConfigurationClientTest {
     private final WebSocketClient socketClient = new ReactorNettyWebSocketClient();
 
     @Test
-    public void testNotificationsOnUpdates() throws Exception {
+    void testNotificationsOnUpdates() throws Exception {
         int count = 1;
         AtomicLong counter = new AtomicLong();
         URI uri = URI.create("ws://localhost:8080/event/rgb");

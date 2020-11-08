@@ -1,4 +1,4 @@
-package com.rgb.spring.boot.reactive.websocket.mogodb.app;
+package com.rgb.spring.boot.reactive.websocket.mogodb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
