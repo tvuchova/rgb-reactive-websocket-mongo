@@ -1,0 +1,36 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.6.RELEASE'
+    }
+    
+    repositories {
+        mavenCentral()
+    }
+    
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive:${springBootVersion}")
+	implementation('javax.websocket:javax.websocket-api:1.1')
+    testCompile( 'org.springframework.boot:spring-boot-test:1.4.0.RELEASE');
+    testImplementation( 'org.junit.jupiter:junit-jupiter-api:5.3.1')
+    testRuntimeOnly ('org.junit.jupiter:junit-jupiter-engine:5.3.1')
+}
+test {
+    useJUnitPlatform()
+}

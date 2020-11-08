@@ -1,0 +1,2 @@
+socketClient/WebSocketConfigurationClientTest.java
+ socketClient.WebSocketConfigurationClientTest
